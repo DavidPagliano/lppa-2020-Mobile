@@ -11,8 +11,29 @@
         canvas.width = 200;
         canvas.height = 300;
 
+        canvas.style.position = 'fixed';
+        canvas.style.top = '0';
+
+        canvas.style.left = '0';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+
         enableInputs();
+        resize();
         run();
+    }
+
+    function resize() {
+        if (window.innerWidth > innerHeight) {
+            canvas.width = 300;
+            canvas.height = 200;
+        } else {
+            canvas.width = 200;
+            canvas.height = 300;
+        }
+
+        scaleX = canvas.width / window.innerWidth;
+        scaleY = canvas.height / window.innerHeight;
     }
 
     function run() {
